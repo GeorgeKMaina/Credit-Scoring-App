@@ -12,7 +12,7 @@ import streamlit as st
 from sklearn.preprocessing import StandardScaler
 
 # Load the trained model
-loaded_model = pickle.load(open(r"C:\Users\gmaina\trained_model.sav", 'rb'))
+loaded_model = pickle.load(open("trained_model.sav", 'rb'))
 
 #creating a function for prediction
 def loanprediction(input_data):
