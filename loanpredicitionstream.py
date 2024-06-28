@@ -13,9 +13,9 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import LabelEncoder
 
 # Load the trained model
-loaded_model = pickle.load(open(r"C:\Users\gmaina\Downloads\trained_model.sav", 'rb'))
-product_encoder = pickle.load(open(r"C:\Users\gmaina\Downloads\product_encoder.sav", 'rb'))
-investor_encoder = pickle.load(open(r"C:\Users\gmaina\Downloads\investor_encoder.sav", 'rb'))
+loaded_model = pickle.load(open("trained_model.sav", 'rb'))
+product_encoder = pickle.load(open("product_encoder.sav", 'rb'))
+investor_encoder = pickle.load(open("investor_encoder.sav", 'rb'))
 
 #creating a function for prediction
 def loanprediction(input_data):
