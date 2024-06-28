@@ -88,9 +88,24 @@ def main():
     # Encode categorical variables
     Product_id_encoded = product_encoder.transform([Product_id])[0]
     Investor_id_encoded = investor_encoder.transform([Investor_id])[0]
+    
+    # Initialize input_data
+    input_data = None
+
+    # Validate inputs and convert to appropriate types
+    try:
+        if Customer_ID:
+            Customer_ID = int(Customer_ID)
+        else:
+            st.error("Customer ID cannot be blank. Please enter a valid Customer ID.")
+            return
+        input_data = [Customer_ID, float(Value), float(Amount), Product_id_encoded, Investor_id_encoded]
+    except ValueError:
+        st.error("Invalid input. Please enter valid numeric values for Customer ID, Value, and Amount.")
+        return
 
     # Convert input data to appropriate types
-    input_data = [int(Customer_ID), float(Value), float(Amount), Product_id_encoded, Investor_id_encoded]
+    #input_data = [int(Customer_ID), float(Value), float(Amount), Product_id_encoded, Investor_id_encoded]
 
     
     #code for predicition
